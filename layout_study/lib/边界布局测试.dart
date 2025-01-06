@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:layout_study/utils.dart';
 
@@ -18,7 +19,7 @@ class _MyRelayoutBoundaryState extends State<MyRelayoutBoundary> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        number++;
+        number = number + 10;
         setState(() {});
       },
       child: Row(
@@ -30,12 +31,14 @@ class _MyRelayoutBoundaryState extends State<MyRelayoutBoundary> {
           ),
           const Spacer(),
           SizedBox(
-            height: 50,
-            width: 100,
+            height: 150,
+            width: 200,
             child: MyRelayoutBCusView01(
-              child: Text('Column00--$number',style: TextStyle(
-                fontSize: 16,
-              ),),
+              child: Container(
+                width: number + 10,
+                height: number  + 10,
+                color: Colors.yellow,
+              ),
             ),
           ),
         ],
@@ -72,10 +75,18 @@ class MyRelayoutBCusView01 extends SingleChildRenderObjectWidget {
 class MyRelayoutBCusViewRe01 extends RenderProxyBox {
   @override
   void performLayout() {
-    print('performLayout -- MyRelayoutBCusViewRe01');
-    super.performLayout();
+    print("performLayout --- MyRelayoutBCusViewRe01");
+    if (child != null) {
+      // 这里传递松约束让Container 不能成功布局边界,这样布局边界就变成MyRelayoutBCusViewRe01
+      // 所以每次刷新都会调用performLayout
+      child!.layout(constraints.loosen(),parentUsesSize: true);
+      size = Size(constraints.maxWidth, constraints.maxHeight);
+    }
   }
 }
+
+
+
 
 // class LeftRightParentData extends ContainerBoxParentData<RenderBox> {}
 // //
