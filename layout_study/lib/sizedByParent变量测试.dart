@@ -4,44 +4,27 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-class MySizeByParentWidget extends StatelessWidget {
-  const MySizeByParentWidget({super.key});
+
+
+class MySizeBox extends SingleChildRenderObjectWidget {
+
+  double width;
+
+  double height;
+  MySizeBox({required this.width, required this.height, super.key,super.child});
 
   @override
-  Widget build(BuildContext context) {
-    final child = GestureDetector(
-      onTap: () {
-        print("tap");
-      },
-      child: Container(width: 300, height: 300, color: Colors.red),
-    );
-    return Row(
-      children: [
-        ConstrainedBox(
-          constraints: BoxConstraints.tight(Size(100, 100)),
-          child: SizedBox(
-            width: 50,
-            height: 50,
-            child: child,
-          ),
-        ),
-        SizedBox(width: 50,),
-        ConstrainedBox(
-          constraints: BoxConstraints.tight(Size(100, 100)),
-          child: Container(
-            width: 50,
-            height: 50,
-            child: child,
-          ),
-        ),
-      ],
-    );
+  RenderObject createRenderObject(BuildContext context) {
+    return MySizeBoxRender(width,height);
   }
+
 }
 
 
-class RenderAccurateSizedBox extends RenderProxyBoxWithHitTestBehavior {
-  RenderAccurateSizedBox(this.width, this.height);
+
+
+class MySizeBoxRender extends RenderProxyBox {
+  MySizeBoxRender(this.width, this.height);
 
   double width;
   double height;
@@ -58,6 +41,8 @@ class RenderAccurateSizedBox extends RenderProxyBoxWithHitTestBehavior {
     return constraints.constrain(Size(width, height));
   }
 
+
+  // 这个是renderBox 的默认实现
   // @override
   // void performResize() {
   //   // default behavior for subclasses that have sizedByParent = true
@@ -75,6 +60,7 @@ class RenderAccurateSizedBox extends RenderProxyBoxWithHitTestBehavior {
       parentUsesSize: false,
     );
   }
+
 }
 
 class NewRender extends RenderObject {
