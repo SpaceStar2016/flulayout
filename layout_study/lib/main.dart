@@ -11,11 +11,21 @@ void main() {
   // final GlobalKey parentKey = GlobalKey();
   // runApp(TestInitSCall(key: parentKey,));
 
-  runApp(SizedBox(
-    width: 50,
-    height: 50,
+
+  runApp(ConstrainedBox(
+    constraints: BoxConstraints.loose(Size( 50, 50)),
     child: ColoredBox(
       color: Colors.yellow,
     ),
-  ));
+  ),);
+
+  // runApp(SizedBox(
+  //   width: 50,
+  //   height: 50,
+  //   child: ColoredBox(
+  //     color: Colors.yellow,
+  //   ),
+  // ),);
+
+
 }
