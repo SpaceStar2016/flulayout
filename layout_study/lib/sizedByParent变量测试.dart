@@ -4,24 +4,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-
-
 class MySizeBox extends SingleChildRenderObjectWidget {
-
   double width;
-
   double height;
-  MySizeBox({required this.width, required this.height, super.key,super.child});
+  MySizeBox(
+      {required this.width, required this.height, super.key, super.child});
 
   @override
   RenderObject createRenderObject(BuildContext context) {
-    return MySizeBoxRender(width,height);
+    return MySizeBoxRender(width, height);
   }
-
 }
-
-
-
 
 class MySizeBoxRender extends RenderProxyBox {
   MySizeBoxRender(this.width, this.height);
@@ -33,14 +26,12 @@ class MySizeBoxRender extends RenderProxyBox {
   @override
   bool get sizedByParent => true;
 
-
   // performResize 中会调用
   @override
   Size computeDryLayout(BoxConstraints constraints) {
     //设置当前元素宽高，遵守父组件的约束
     return constraints.constrain(Size(width, height));
   }
-
 
   // 这个是renderBox 的默认实现
   // @override
@@ -60,7 +51,6 @@ class MySizeBoxRender extends RenderProxyBox {
       parentUsesSize: false,
     );
   }
-
 }
 
 class NewRender extends RenderObject {
@@ -87,14 +77,9 @@ class NewRender extends RenderObject {
   // TODO: implement semanticBounds
   Rect get semanticBounds => throw UnimplementedError();
 
-
   @override
   void layout(Constraints constraints, {bool parentUsesSize = false}) {
     // TODO: implement layout
     super.layout(constraints);
   }
-
 }
-
-
-

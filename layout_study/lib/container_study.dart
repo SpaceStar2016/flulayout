@@ -30,13 +30,18 @@ class ContainerStudy {
       ),
     );
 
-    Widget testWidget = Center(
-      child: Container(
-        width: 50,
-        height: 50,
-        child: ColoredBox(
-          color: Colors.yellow,
-        )
+    Widget testWidget = FractionallySizedBox (
+      child: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            width: 50,
+            height: 50,
+            child: ColoredBox(
+              color: Colors.yellow,
+            )
+          ),
+        ),
       ),
     );
     return testWidget;
@@ -68,4 +73,21 @@ class ConRenderObjectRenderBox extends RenderProxyBox {
   }
 }
 
+
+// abstract class ABC {
+//   paint();
+// }
+//
+// abstract class Man extends ABC {
+//
+// }
+//
+// class Body extends Man {
+//   @override
+//   paint() {
+//     // TODO: implement paint
+//     throw UnimplementedError();
+//   }
+//
+// }
 
