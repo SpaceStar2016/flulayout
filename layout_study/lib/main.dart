@@ -8,11 +8,15 @@ import 'container_study.dart';
 
 void main() {
 
+
   runApp(MyRenderAligningShiftedBoxWidgetTest.makeWidget());
+
+  runApp(ContainerStudy.makeWidget());
   // runApp(MaterialApp(home: MyRelayoutBoundary()));
 
   // final GlobalKey parentKey = GlobalKey();
   // runApp(TestInitSCall(key: parentKey,));
+
 
   // runApp(
   //   ConstrainedBox(
@@ -22,6 +26,15 @@ void main() {
   //     ),
   //   ),
   // );
+
+
+  // runApp(ConstrainedBox(
+  //   constraints: BoxConstraints.loose(Size( 50, 50)),
+  //   child: ColoredBox(
+  //     color: Colors.yellow,
+  //   ),
+  // ),);
+
 
   // runApp(SizedBox(
   //   width: 50,

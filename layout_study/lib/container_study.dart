@@ -44,7 +44,7 @@ class ContainerStudy {
         ),
       ),
     );
-    return testWidget;
+    return con02;
   }
 }
 
@@ -70,6 +70,11 @@ class ConRenderObjectRenderBox extends RenderProxyBox {
     }  else {
       size = const Size(50, 50);
     }
+  }
+  @override
+  void paint(PaintingContext context, Offset offset) {
+    print('--paint---');
+    super.paint(context, offset);
   }
 }
 
