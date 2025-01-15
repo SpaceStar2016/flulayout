@@ -30,21 +30,19 @@ class ContainerStudy {
       ),
     );
 
-    Widget testWidget = FractionallySizedBox (
-      child: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Container(
-            width: 50,
-            height: 50,
-            child: ColoredBox(
-              color: Colors.yellow,
-            )
-          ),
+    Widget testWidget = Center(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          width: 50,
+          height: 50,
+          child: ColoredBox(
+            color: Colors.yellow,
+          )
         ),
       ),
     );
-    return con02;
+    return testWidget;
   }
 }
 
