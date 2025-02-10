@@ -30,7 +30,8 @@ class ContainerStudy {
       ),
     );
 
-    Widget testWidget = Center(
+    Widget testWidget00 = Align(
+      alignment: Alignment.bottomCenter,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
@@ -42,7 +43,40 @@ class ContainerStudy {
         ),
       ),
     );
-    return testWidget;
+    Widget testWidget01 = Center(
+      child: Expanded(
+        child: Container(
+            width: 50,
+            height: 50,
+            child: ColoredBox(
+              color: Colors.yellow,
+            )
+        ),
+      ),
+    );
+
+    Widget testWidget02 = Center(
+      child: Row(
+        textDirection: TextDirection.ltr,
+        children: [
+          Container(
+              width: 50,
+              height: 50,
+              child: ColoredBox(
+                color: Colors.yellow,
+              )
+          ),
+          Container(
+              width: 50,
+              height: 50,
+              child: ColoredBox(
+                color: Colors.blue,
+              )
+          ),
+        ],
+      ),
+    );
+    return testWidget02;
   }
 }
 
