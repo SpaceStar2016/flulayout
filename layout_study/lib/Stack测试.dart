@@ -5,9 +5,16 @@ class MyStackTest {
   static Widget makeWidget() {
     return Center(
       child: Stack(
-        textDirection: TextDirection.rtl,
+        textDirection: TextDirection.ltr,
         children: [
+          // Container(width: 150, height: 150, color: Colors.yellow),
+          // Container(width: 75, height: 75, color: Colors.cyan),
           // 使用 CustomPositioned 定位
+          Positioned(
+            left: 20,
+            right: 20,// 0弧度 = 右侧
+            child: ColoredBox(color: Colors.amber),
+          ),
           Positioned(
             top: 100,
             left: 0, // 0弧度 = 右侧

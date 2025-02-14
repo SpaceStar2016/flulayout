@@ -22,9 +22,9 @@ class _MultiContainerTestState extends State<MultiContainerTest> {
         mainAxisAlignment: MainAxisAlignment.center,
         textDirection: TextDirection.rtl,
         children: [
-          // MyBox(),
-          MyBox(),
-          MyBox(),
+          MyBox(color: Color(0xFFd1f1d1),tex: '1'),
+          MyBox(color: Color(0xFFd2f2F2),tex:'2'),
+          MyBox(color: Color(0xFFd3f3F3),tex: '3'),
         ],
       ),
     );
@@ -32,13 +32,22 @@ class _MultiContainerTestState extends State<MultiContainerTest> {
 }
 
 class MyBox extends StatefulWidget {
-  const MyBox({super.key});
+
+  final String tex;
+  final Color color;
+  const MyBox({super.key, required this.color, required this.tex});
 
   @override
   State<MyBox> createState() => _MyBoxState();
 }
 
 class _MyBoxState extends State<MyBox> {
+
+  @override
+  void initState() {
+    super.initState();
+    print('~~initState');
+  }
   int count = 0;
   @override
   Widget build(BuildContext context) {
@@ -51,8 +60,8 @@ class _MyBoxState extends State<MyBox> {
       child: Container(
           width: 30,
           height: 30,
-          color: Colors.primaries[0],
-          child: Text(textDirection: TextDirection.rtl,'${count}')),
+          color: widget.color,
+          child: Text(textDirection: TextDirection.rtl,'${widget.tex}')),
     );
   }
 }

@@ -26,8 +26,8 @@ void main() {
   // runApp(ContainerStudy.makeWidget());
   // runApp(MultiChildRenderObjectWidgetTest.makeWidget());
   // runApp(RowTest.makeWidget());
-  runApp(DuoGeContainerTest.makeWidget());
-  // runApp(MyStackTest.makeWidget());
+  // runApp(DuoGeContainerTest.makeWidget());
+  runApp(MyStackTest.makeWidget());
   // runApp(MyCustomMultiChildLayoutTest.makeWidget());
   // runApp(MaterialApp(home: MyRelayoutBoundary()));
 
