@@ -7,6 +7,7 @@ import 'package:layout_study/Stack%E6%B5%8B%E8%AF%95.dart';
 import 'package:layout_study/sizedByParent%E5%8F%98%E9%87%8F%E6%B5%8B%E8%AF%95.dart';
 
 import 'CustomMultiChildLayout测试.dart';
+import 'CustomScrollView使用Demo.dart';
 import 'OverFlowBox测试.dart';
 import 'RenderAligningShiftedBox研究.dart';
 import 'RenderConstrainedBox测试.dart';
@@ -27,7 +28,8 @@ void main() {
   // runApp(MultiChildRenderObjectWidgetTest.makeWidget());
   // runApp(RowTest.makeWidget());
   // runApp(DuoGeContainerTest.makeWidget());
-  runApp(MyStackTest.makeWidget());
+  // runApp(MyStackTest.makeWidget());
+  runApp(CustomScrollViewExample());
   // runApp(MyCustomMultiChildLayoutTest.makeWidget());
   // runApp(MaterialApp(home: MyRelayoutBoundary()));
 
