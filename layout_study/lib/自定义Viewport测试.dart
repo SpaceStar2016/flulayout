@@ -9,12 +9,14 @@ class MyViewport extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Scrollable+Viewport 测试'),
-      ),
-      body: Scrollable(
-        viewportBuilder: _buildViewPort,
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Scrollable+Viewport 测试'),
+        ),
+        body: Scrollable(
+          viewportBuilder: _buildViewPort,
+        ),
       ),
     );
   }
@@ -22,7 +24,7 @@ class MyViewport extends StatelessWidget {
   Widget _buildViewPort(BuildContext context, ViewportOffset position) {
     return Viewport(
       offset: position,
-      slivers: [_buildSliverGrid(), _buildSliverList()],
+      slivers: [_buildSliverGrid(),_buildSliverList()],
     );
   }
 
@@ -35,7 +37,11 @@ class MyViewport extends StatelessWidget {
   }
 
   Widget _buildItemByIndex(BuildContext context, int index) {
-    return Text('${data[index]}');
+    return Container(
+      width: 200,
+        height: 200,
+        color: Colors.amber,
+        child: Text('${data[index]}'));
   }
 
   Widget _buildSliverGrid() {
@@ -45,6 +51,10 @@ class MyViewport extends StatelessWidget {
           childCount: data.length,
         ),
         gridDelegate:
-            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 10));
+            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 5));
   }
+
+  // test(){
+  //   SliverConstraints();
+  // }
 }
