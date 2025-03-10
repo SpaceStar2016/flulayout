@@ -1,4 +1,3 @@
-
 import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
@@ -9,41 +8,40 @@ class MyEasyListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Directionality(textDirection: TextDirection.ltr, child: ListView(
-        children: [
-          SliverLayoutBuilder(
-            builder: (context,con) {
-              return Container(
+      child: Directionality(
+          textDirection: TextDirection.ltr,
+          child: ListView(
+            children: [
+              Container(
                 width: 150,
                 height: 150,
                 color: getRandomColor(),
-              );
-            }
-          ),
-          Container(
-            width: 150,
-            height: 150,
-            color: getRandomColor(),
-          ),
-          Container(
-            width: 150,
-            height: 150,
-            color: getRandomColor(),
-          ),
-          Container(
-            width: 150,
-            height: 150,
-            color: getRandomColor(),
-          ),
-          Container(
-            width: 150,
-            height: 150,
-            color: getRandomColor(),
-          ),
-        ],
-      )),
+              ),
+              Container(
+                width: 150,
+                height: 150,
+                color: getRandomColor(),
+              ),
+              Container(
+                width: 150,
+                height: 150,
+                color: getRandomColor(),
+              ),
+              Container(
+                width: 150,
+                height: 150,
+                color: getRandomColor(),
+              ),
+              Container(
+                width: 150,
+                height: 150,
+                color: getRandomColor(),
+              ),
+            ],
+          )),
     );
   }
+
   // 生成随机颜色
   Color getRandomColor() {
     final random = Random();
