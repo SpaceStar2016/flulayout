@@ -17,30 +17,59 @@ class ABC extends StatelessWidget {
         borderRadius: BorderRadius.circular(58 / 3),
       ),
       child: LayoutBuilder(
-        builder: (context,con) {
-          return ColoredBox(
-            color: Colors.yellow,
-            child: Row(
-              // mainAxisSize: MainAxisSize.min,
-              children: [
-                Column(
+          builder: (context,con00) {
+            return ConstrainedBox(
+              constraints: BoxConstraints(
+                  minHeight: con00.maxHeight > 400 ? 400 : con00.maxHeight,
+                  maxHeight: con00.maxHeight,
+                  minWidth: con00.minWidth,
+                  maxWidth: con00.maxWidth),
+              child: ColoredBox(
+                color: Colors.yellow,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Container(
-                      color: Colors.black,
-                      child: Row(
-                        children: [
-                          FlutterLogo(size: (100),),
-                        ],
-                      ),
-                    ),
+                    FlutterLogo(size: (100),),
+                    Spacer(),
+                    Text('123123'),
                   ],
                 ),
-              ],
-            ),
-          );
-        }
+              ),
+            );
+          }
       ),
     );
+    // return Container(
+    //   decoration: BoxDecoration(
+    //     color: Colors.white,
+    //     borderRadius: BorderRadius.circular(58 / 3),
+    //   ),
+    //   child: LayoutBuilder(
+    //     builder: (context,con) {
+    //       return ColoredBox(
+    //         color: Colors.yellow,
+    //         child: Row(
+    //           // mainAxisSize: MainAxisSize.min,
+    //           children: [
+    //             Column(
+    //               children: [
+    //                 Container(
+    //                   color: Colors.black,
+    //                   child: Row(
+    //                     children: [
+    //                       FlutterLogo(size: (100),),
+    //                     ],
+    //                   ),
+    //                 ),
+    //               ],
+    //             ),
+    //           ],
+    //         ),
+    //       );
+    //     }
+    //   ),
+    // );
   }
 }
 
