@@ -1,0 +1,2 @@
+C:/Users/admin/Desktop/flulayout/layout_study/android/app/.cxx/Debug/535v5ao1/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/admin/Desktop/flulayout/layout_study/android/app/.cxx/Debug/535v5ao1/arm64-v8a/CMakeFiles/rebuild_cache.dir

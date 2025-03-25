@@ -20,19 +20,23 @@ import 'Stack测试.dart';
 import 'MultiChildRenderObjectWidget测试.dart';
 void main() {
 
+  // runApp(
+  //   ColoredBox(color: Colors.yellow)
+  // );
+
   // runApp(MyRenderConstrainedBoxWidgetTest.makeWidget());
 
   // runApp(MyRenderAligningShiftedBoxWidgetTest.makeWidget());
   //
 
   // runApp(MyStatefulWidget());
-  // runApp(ContainerStudy.makeWidget());
+  runApp(ContainerStudy.makeWidget());
   // runApp(MultiChildRenderObjectWidgetTest.makeWidget());
   // runApp(RowTest.makeWidget());
   // runApp(DuoGeContainerTest.makeWidget());
   // runApp(MyStackTest.makeWidget());
   // runApp(CustomScrollViewExample());
-  runApp(MyEasyListView());
+  // runApp(MyEasyListView());
   // runApp(MyCustomMultiChildLayoutTest.makeWidget());
   // runApp(MaterialApp(home: MyRelayoutBoundary()));
 
